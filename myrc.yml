@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+ name: maha-rc
+spec: 
+ replicas: 3
+ selector:
+   app: mahanginx
+ templates:
+   metadata:
+     labels:
+       app: mahanginx
+   spec: 
+     containers:
+     - name: maha-container
+       image: 
+       ports:
+       - containerPort: 80
